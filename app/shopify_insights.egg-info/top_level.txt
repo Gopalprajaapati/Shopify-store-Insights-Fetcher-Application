@@ -1,5 +1,0 @@
-models
-routers
-services
-tests
-utils
