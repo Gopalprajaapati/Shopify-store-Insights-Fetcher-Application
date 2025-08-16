@@ -22,7 +22,7 @@ class ShopifyStoreInsights(Base):
     important_links = Column(JSON)
     competitors = Column(JSON)
     fetched_at = Column(DateTime, default=datetime.utcnow)
-    
+
 # Database connection
 DATABASE_URL = f"mysql+mysqlconnector://{settings.DB_USER}:{settings.DB_PASSWORD}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
 engine = create_engine(DATABASE_URL)

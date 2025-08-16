@@ -1,5 +1,6 @@
 from typing import List, Optional, Dict
 from pydantic import BaseModel, HttpUrl
+from datetime import datetime
 
 class Product(BaseModel):
     id: Optional[str]
@@ -39,4 +40,8 @@ class BrandInsightsResponse(BaseModel):
     contact_info: ContactInfo
     about_brand: str
     important_links: Dict[str, HttpUrl]
-    fetched_at: str
+    fetched_at: datetime
+
+class CompetitorAnalysisResponse(BrandInsightsResponse):
+    original_store: HttpUrl
+    competitors: List[BrandInsightsResponse]
